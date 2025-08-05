@@ -262,10 +262,64 @@ class PureNavbarController {
   }
 }
 
+class HeroController {
+  constructor() {
+    this.hero = document.querySelector(".hero");
+    this.heroText = document.querySelector(".hero-text");
+
+    this.init();
+  }
+
+  init() {
+    this.setupIntersectionObserver();
+    this.setupCTATracking();
+  }
+
+
+  setupIntersectionObserver() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate__animated", "animate__fadeInUp");
+        }
+      });
+    }, observerOptions);
+
+    // Observar elementos que necesiten animación adicional
+    const elementsToObserve = document.querySelectorAll(".hero-badge");
+    elementsToObserve.forEach((el) => observer.observe(el));
+  }
+
+  setupCTATracking() {
+    const ctaButton = document.querySelector(".hero-cta");
+
+    if (ctaButton) {
+      ctaButton.addEventListener("click", (e) => {
+        // Efecto de ripple
+        this.createRippleEffect(e, ctaButton);
+
+        // Pequeño delay para el efecto visual
+        setTimeout(() => {
+          // El navegador seguirá el enlace normalmente
+        }, 150);
+      });
+    }
+  }
+}
+
+
+
 // === INITIALIZE APP ===
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize navbar controller
   new PureNavbarController();
+
+  new HeroController();
 
   // Remove loading bar after page loads
   setTimeout(() => {

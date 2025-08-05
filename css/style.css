@@ -8,7 +8,7 @@
   --white: #f9f9f9;
   --gray: #f1f1f1;
   --shadow: rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -58,7 +58,7 @@ body {
 }
 
 .wrapper-section.scrolled .navbar {
-  padding: .8rem 0;
+  padding: 0.8rem 0;
 }
 
 /* === BRAND/LOGO === */
@@ -101,13 +101,13 @@ body {
 
 .nav-item {
   position: relative;
-  margin: 0 .4rem;
+  margin: 0 0.4rem;
 }
 
 .nav-link {
   position: relative;
   display: block;
-  padding: .8rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
@@ -165,7 +165,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: .6rem;
+  padding: 0.6rem;
   border-radius: 8px;
   transition: var(--transition);
 }
@@ -235,7 +235,7 @@ body {
   }
   .text-logo {
     font-size: 1.3rem;
-    margin-left: .9rem;
+    margin-left: 0.9rem;
   }
   .navbar-brand img {
     width: 50px;
@@ -258,42 +258,292 @@ body {
   }
 }
 
-/* === DEMO SECTIONS === */
+/* === SECTIONS === */
 .wrapper-section {
+  padding: 100px 1.2rem 3.8rem;
   min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 20px 50px;
   text-align: center;
 }
-
-.wrapper-section:nth-child(2) {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* === HERO === */
+.hero {
+  position: relative;
+  background: linear-gradient(
+      135deg,
+      rgba(38, 1, 1, 0.812) 0%,
+      rgba(9, 8, 8, 0.695) 100%
+    ),
+    url("../assets/images/backgrounds/seguridad-ares-website.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--white);
+  overflow: hidden;
 }
-
-.wrapper-section:nth-child(3) {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: var(--white);
-}
-
-.wrapper-section:nth-child(4) {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  color: var(--white);
-}
-
-.section-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-
-.section-content p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
+/* === CONTAINER PRINCIPAL === */
+.hero-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+/* === CONTENIDO DEL HERO === */
+.hero-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  margin-left: 0;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+/* === ESTILOS DE TEXTO === */
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInRight 0.8s ease 0.3s forwards;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--white) 0%, #ecf0f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.8s ease 0.6s forwards;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.8s ease 0.9s forwards;
+}
+
+/* === BOTÓN CTA === */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 35px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(50px) scale(0.9);
+  animation: slideInRight 0.8s ease 1.2s forwards,
+    scaleIn 0.3s ease 1.2s forwards;
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: var(--transition);
+}
+
+.hero-cta:hover::before {
+  left: 100%;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(231, 76, 60, 0.4);
+  background: linear-gradient(135deg, #e74c3c 0%, var(--accent-color) 100%);
+}
+
+.hero-cta:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Icono del botón */
+.cta-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: var(--transition);
+}
+
+.hero-cta:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+@keyframes scrollBounce {
+  0%,
+  20% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* === ANIMACIONES === */
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  .hero-badge {
+    padding: 15px 20px;
+  }
+
+  .badge-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* === MEJORAS DE RENDIMIENTO === */
+.hero {
+  will-change: transform;
+}
+
+.hero-cta {
+  will-change: transform;
+}
+
+/* === ACCESIBILIDAD === */
+@media (prefers-reduced-motion: reduce) {
+  .hero-subtitle,
+  .hero-title,
+  .hero-description,
+  .hero-cta,
+  .hero-badge,
+  .scroll-indicator {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .particle {
+    animation: none;
+  }
+
+  .scroll-arrow::before {
+    animation: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.9) 0%,
+        rgba(52, 152, 219, 0.7) 100%
+      ),
+      url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+  }
 }
 
 /* === SCROLL ANIMATIONS === */
