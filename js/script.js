@@ -1,9 +1,9 @@
 // === NAVBAR CONTROLLER CLASS ===
 class PureNavbarController {
   constructor() {
-    this.navbar = document.querySelector(".wrapper-section");
+    this.navbar = document.querySelector(".header-section");
     this.navLinks = document.querySelectorAll(".nav-link:not(.external-link)");
-    this.sections = document.querySelectorAll("section[id]");
+    this.sections = document.querySelectorAll("section[id], main[id]");
     this.indicator = document.querySelector(".nav-indicator");
     this.navbarToggle = document.getElementById("navbarToggle");
     this.navbarNav = document.getElementById("navbarNav");
@@ -39,7 +39,6 @@ class PureNavbarController {
   }
 
   setupScrollDetection() {
-    let scrollTimeout;
     let ticking = false;
 
     const scrollHandler = () => {
@@ -237,7 +236,7 @@ class PureNavbarController {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const element = entry.target.querySelector(".fade-in-up");
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && element) {
           element.classList.add("animate");
           element.classList.add("animate__animated", "animate__fadeInUp");
         }
@@ -262,64 +261,10 @@ class PureNavbarController {
   }
 }
 
-class HeroController {
-  constructor() {
-    this.hero = document.querySelector(".hero");
-    this.heroText = document.querySelector(".hero-text");
-
-    this.init();
-  }
-
-  init() {
-    this.setupIntersectionObserver();
-    this.setupCTATracking();
-  }
-
-
-  setupIntersectionObserver() {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -100px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate__animated", "animate__fadeInUp");
-        }
-      });
-    }, observerOptions);
-
-    // Observar elementos que necesiten animación adicional
-    const elementsToObserve = document.querySelectorAll(".hero-badge");
-    elementsToObserve.forEach((el) => observer.observe(el));
-  }
-
-  setupCTATracking() {
-    const ctaButton = document.querySelector(".hero-cta");
-
-    if (ctaButton) {
-      ctaButton.addEventListener("click", (e) => {
-        // Efecto de ripple
-        this.createRippleEffect(e, ctaButton);
-
-        // Pequeño delay para el efecto visual
-        setTimeout(() => {
-          // El navegador seguirá el enlace normalmente
-        }, 150);
-      });
-    }
-  }
-}
-
-
-
 // === INITIALIZE APP ===
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize navbar controller
   new PureNavbarController();
-
-  new HeroController();
 
   // Remove loading bar after page loads
   setTimeout(() => {
@@ -329,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 2000);
 
-  // Add some interactive feedback
+  // Add some interactive feedback for external links
   document.querySelectorAll(".external-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       // Add loading effect for external links
@@ -343,12 +288,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-// === PERFORMANCE OPTIMIZATION ===
-// Preload critical resources
-const preloadLink = document.createElement("link");
-preloadLink.rel = "preload";
-preloadLink.as = "style";
-preloadLink.href =
-  "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
-document.head.appendChild(preloadLink);
