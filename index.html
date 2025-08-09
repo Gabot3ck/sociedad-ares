@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sociedad Ares - Navbar CSS/JS Puro</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -27,7 +28,7 @@
         <span></span>
       </button>
 
-      <ul class="navbar-nav" id="navbarNav">
+      <ul class="navbar-nav flex-row" id="navbarNav">
         <div class="nav-indicator"></div>
         <li class="nav-item">
           <a class="nav-link active" href="#inicio" data-section="inicio">Inicio</a>
@@ -77,73 +78,65 @@
   </main>
 
 
-  <!-- SERVICES SECTION -->
-  <section id="servicios" class="wrapper-section  services-section">
-    <div class="services-container">
-      <!-- Introducción -->
-      <div class="services-intro">
-        <h6 class="services-subtitle">garantizamos tu tranquilidad y seguridad</h6>
-        <h1 class="services-title">Nuestros Servicios</h1>
-        <p class="services-description">
-          En Sociedad Ares, nos especializamos en brindar personal de seguridad altamente
-          capacitado y comprometido con la protección de tus instalaciones. Con nosotros, la tranquilidad está en
-          las mejores manos.
-        </p>
+  <!-- SERVICES -->
+  <section id="servicios" class="text-center wp_services">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="intro">
+            <p class="">garantizamos tu tranquilidad y seguridad<p/>
+            <h2>Nuestros Servicios</h2>
+            <p class="mx-auto">En Sociedad Ares, nos especializamos en brindar personal de seguridad altamente
+              capacitado y comprometido con la protección de tus instalaciones. Con nosotros, la tranquilidad está en
+              las mejores manos.</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Grid de Servicios -->
-      <div class="services-grid">
-        <!-- Servicio 1: Seguridad Privada -->
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="img/icon-ggss.png" alt="Servicio de guardia de seguridad">
+      <div class="row g-3">
+        <div class="col-xl-3 col-md-6 h-full">
+          <div class="service fade-in-up">
+            <div class="service-box_wp_img">
+              <img src="./assets/images/services/icon-ggss.webp" alt="Servicio de  guardia de seguridad" loading="lazy">
+            </div>
+            <h3>Seguridad Privada</h3>
+            <p>Ofrecemos servicios de personal de seguridad, <strong>conserjes </strong> y <strong>guardias de
+                seguridad</strong> altamente capacitados para la protección de tus instalaciones. Garantizamos un
+              entorno seguro y la tranquilidad que necesitas.</p>
           </div>
-          <h5 class="service-title">Seguridad Privada</h5>
-          <p class="service-description">
-            Ofrecemos servicios de personal de seguridad, <strong>conserjes</strong> y <strong>guardias de
-              seguridad</strong> altamente capacitados para la protección de tus instalaciones. Garantizamos un
-            entorno seguro y la tranquilidad que necesitas.
-          </p>
         </div>
-
-        <!-- Servicio 2: Asesoramiento -->
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="img/icon-asesor.png" alt="Asesoramiento en seguridad privada">
+        <div class="col-xl-3 col-md-6 h-full">
+          <div class="service fade-in-up">
+            <div class="service-box_wp_img">
+              <img src="./assets/images/services/icon-asesor.webp" alt="Asesoramiento en seguridad privada" loading="lazy">
+            </div>
+            <h3>Asesoramiento</h3>
+            <p>Asesoramiento especializado para la creación de <strong>directivas de funcionamiento</strong> y
+              <strong>estudios de seguridad</strong> , asegurando el cumplimiento normativo y la protección integral de
+              tus instalaciones bajo las últimas normativas vigentes.</p>
           </div>
-          <h5 class="service-title">Asesoramiento</h5>
-          <p class="service-description">
-            Asesoramiento especializado para la creación de <strong>directivas de funcionamiento</strong> y
-            <strong>estudios de seguridad</strong>, asegurando el cumplimiento normativo y la protección integral de
-            tus instalaciones bajo las últimas normativas vigentes.
-          </p>
         </div>
-
-        <!-- Servicio 3: Asesoría Técnica -->
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="img/icon-cctv.png" alt="Asesoría técnica en sistemas de seguridad">
+        <div class="col-xl-3 col-md-6 ">
+          <div class="service fade-in-up">
+            <div class="service-box_wp_img">
+              <img src="./assets/images/services/icon-cctv.webp" alt="Curso OS-10 en Seguridad Ares" loading="lazy">
+            </div>
+            <h3>Asesoría Técnica</h3>
+            <p>Brindamos asesoría técnica especializada en la instalación y gestión de <strong>Sistemas de
+                CCTV</strong>, <strong>Sistemas de alarmas</strong> y <strong>Control de Acceso</strong>. Nuestro
+              enfoque garantiza soluciones efectivas y personalizadas para fortalecer la protección de sus
+              instalaciones.</p>
           </div>
-          <h5 class="service-title">Asesoría Técnica</h5>
-          <p class="service-description">
-            Brindamos asesoría técnica especializada en la instalación y gestión de <strong>Sistemas de
-              CCTV</strong>, <strong>Sistemas de alarmas</strong> y <strong>Control de Acceso</strong>. Nuestro
-            enfoque garantiza soluciones efectivas y personalizadas para fortalecer la protección de sus
-            instalaciones.
-          </p>
         </div>
-
-        <!-- Servicio 4: Capacitación OS-10 -->
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="img/icon-capacitacion.png" alt="Curso OS-10 en Seguridad Ares">
+        <div class="col-xl-3 col-md-6">
+          <div class="service fade-in-up">
+            <div class="service-box_wp_img">
+              <img src="./assets/images/services/icon-capacitacion.webp" alt="Curso OS-10 en Seguridad Ares" loading="lazy">
+            </div>
+            <h3>Capacitación 0S-10</h3>
+            <p>Preparación y capacitación especializada para rendir el examen del <strong>curso OS-10</strong> de
+              Carabineros de Chile, formando a futuros agentes de seguridad privada con los conocimientos necesarios
+              para destacar en el sector.</p>
           </div>
-          <h5 class="service-title">Capacitación OS-10</h5>
-          <p class="service-description">
-            Preparación y capacitación especializada para rendir el examen del <strong>curso OS-10</strong> de
-            Carabineros de Chile, formando a futuros agentes de seguridad privada con los conocimientos necesarios
-            para destacar en el sector.
-          </p>
         </div>
       </div>
     </div>
@@ -159,6 +152,7 @@
     </div>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
 </body>
 
