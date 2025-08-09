@@ -235,10 +235,13 @@ class PureNavbarController {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const element = entry.target.querySelector(".fade-in-up");
-        if (entry.isIntersecting && element) {
-          element.classList.add("animate");
-          element.classList.add("animate__animated", "animate__fadeInUp");
+        if (entry.isIntersecting) {
+          const elements = entry.target.querySelectorAll(".fade-in-up");
+          elements.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add("animate__animated", "animate__fadeInUp");
+            }, index * 150); // delay escalonado
+          });
         }
       });
     }, observerOptions);
