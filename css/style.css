@@ -655,3 +655,28 @@ section {
     height: 450px;
   }
 }
+
+#milestone {
+  background: linear-gradient(rgba(180, 21, 25, 0.85), rgba(180, 21, 25, 0.65)),
+    url(../assets/images/backgrounds/equipo-trabajo.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 0;
+}
+
+#milestone h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+#milestone .col-lg-2:hover h3 {
+  transform: scale(1.1);
+}
+
+#milestone p {
+  color: var(--white);
+  font-size: 1.2rem;
+}

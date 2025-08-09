@@ -264,6 +264,39 @@ class PureNavbarController {
   }
 }
 
+function setupCounterAnimation() {
+  const counters = document.querySelectorAll(".counter");
+  let animated = false; // evita que se reinicie al volver a hacer scroll
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute("data-target");
+          const isPercentage = counter.textContent.includes('%');
+          const duration = 2000; // tiempo total en ms
+          const stepTime = Math.abs(Math.floor(duration / target));
+
+          let current = 0;
+          const timer = setInterval(() => {
+            current++;
+            counter.textContent = `+${current}${isPercentage ? '%' : ''}`;
+            if (current >= target) {
+              clearInterval(timer);
+            }
+          }, stepTime);
+        });
+        animated = true;
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const milestoneSection = document.getElementById("milestone");
+  if (milestoneSection) {
+    observer.observe(milestoneSection);
+  }
+}
+
 // === INITIALIZE APP ===
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize navbar controller
@@ -290,4 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 200);
     });
   });
+
+  setupCounterAnimation();
 });
