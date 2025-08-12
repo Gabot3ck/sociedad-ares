@@ -656,7 +656,6 @@ section {
   }
 }
 
-
 /* MILESTONE */
 #milestone {
   background: linear-gradient(rgba(180, 21, 25, 0.85), rgba(180, 21, 25, 0.65)),
@@ -681,4 +680,45 @@ section {
 #milestone p {
   color: var(--white);
   font-size: 1.2rem;
+}
+
+/* PILLARS */
+.pillars{
+  background-color: white;
+}
+.pillars h4{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e74c3c;
+}
+.pillars p{
+  font-size: 1.1rem;
+}
+.info-box {
+  align-items: center;
+  display: flex;
+}
+.info-box .info-box_wp_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.info-box .info-box_wp_img img {
+  width: 50px;
+  height: 50px;
+}
+
+@media (min-width: 1140px) {
+  .info-box .info-box_wp_img {
+    min-width: 120px;
+    min-height: 120px;
+  }
+  .info-box .info-box_wp_img img {
+    width: 70px;
+    height: 70px;
+  }
 }
