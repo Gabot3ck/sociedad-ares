@@ -273,19 +273,19 @@ function setupCounterAnimation() {
       if (entry.isIntersecting && !animated) {
         counters.forEach(counter => {
           const target = +counter.getAttribute("data-target");
-          const isPercentage = counter.textContent.includes('%');
+          const suffix = counter.getAttribute("data-suffix") || "";
           const duration = 2000; // tiempo total en ms
           const stepTime = Math.abs(Math.floor(duration / target));
 
           let current = 0;
+
           const timer = setInterval(() => {
             current++;
-            counter.textContent = `+${current}${isPercentage ? '%' : ''}`;
-            if (current >= target) {
-              clearInterval(timer);
-            }
+            counter.textContent = `+${current}${suffix}`;
+            (current >= target) && clearInterval(timer);
           }, stepTime);
         });
+        
         animated = true;
       }
     });

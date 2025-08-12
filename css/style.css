@@ -656,6 +656,8 @@ section {
   }
 }
 
+
+/* MILESTONE */
 #milestone {
   background: linear-gradient(rgba(180, 21, 25, 0.85), rgba(180, 21, 25, 0.65)),
     url(../assets/images/backgrounds/equipo-trabajo.webp);
@@ -666,7 +668,7 @@ section {
 }
 
 #milestone h3 {
-  font-size: 4rem;
+  font-size: 4.8rem;
   font-weight: 700;
   color: var(--white);
   transition: transform 0.3s ease;
