@@ -5,6 +5,7 @@
   --accent-color: #e74c3c;
   --text-dark: #191f24;
   --text-light: #7f8c8d;
+  --text-footer-autor: #6a7d91;
   --border-color: #ecf0f1;
   --white: #f9f9f9;
   --gray: #f1f1f1;
@@ -720,7 +721,6 @@ section {
     width: 450px;
   }
 }
-
 @media (min-width: 1024px) {
   .info-box .info-box_wp_img {
     min-width: 120px;
@@ -733,4 +733,101 @@ section {
   .pillars-img {
     width: 100%;
   }
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--text-dark);
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+footer img {
+  width: 80px;
+  border-radius: 8px;
+}
+footer .footer-top {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+footer p,
+footer a {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+footer .footer-copyright {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+footer .footer-copyright a {
+  font-weight: 500;
+  color: var(--text-footer-autor);
+}
+
+footer .footer-copyright a:hover {
+  color: var(--primary-color);
+}
+
+/* Íconos sociales y de contacto */
+footer .social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons svg {
+  flex-shrink: 0;
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover svg {
+  color: var(--white);
+}
+
+/* Línea inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+/* Botón de políticas */
+.btn-footer {
+  border: none;
+  color: white;
+  background: transparent;
+  transition: color 0.3s ease;
+}
+
+.btn-footer:hover {
+  color: var(--primary-color);
+}
+
+.loader {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  z-index: 99999;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
