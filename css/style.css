@@ -797,10 +797,6 @@ footer .social-icons svg {
   transition: color 0.3s ease;
 }
 
-footer .social-icons a:hover svg {
-  color: var(--white);
-}
-
 /* Línea inferior */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -819,6 +815,18 @@ footer .social-icons a:hover svg {
 .btn-footer:hover {
   color: var(--primary-color);
 }
+/* Animación base */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/* Cuando se hace visible */
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .loader {
   min-height: 100vh;

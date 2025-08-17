@@ -324,5 +324,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+    // === Footer Animation ===
+  const footer = document.querySelector("footer");
+  if (footer) {
+    footer.classList.add("fade-in-up");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          footer.classList.add("visible");
+          observer.unobserve(footer); // solo una vez
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(footer);
+  }
+
+  // === Año actual dinámico ===
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
   setupCounterAnimation();
 });
