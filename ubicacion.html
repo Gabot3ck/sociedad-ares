@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,66 @@
 </head>
 
 <body>
+  <!-- Navbar -->
+  <header class="header-section">
+    <nav class="navbar">
+      <a class="navbar-brand animate__animated animate__zoomIn" href="https://seguridadares.cl/">
+        <img src="./assets/images/logos/logo-ares.jpg" alt="Sociedad Ares Logo" />
+        <span class="text-logo">Sociedad Ares</span>
+      </a>
+
+      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-nav flex-row" id="navbarNav">
+        <div class="nav-indicator"></div>
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio" data-section="inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#servicios" data-section="servicios">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#clientes" data-section="clientes">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link external-link" href="./os10.html">Cursos OS-10</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active external-link" href="./ubicacion.html">Ubicación</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Hero Section -->
+  <main id="inicio" class="wrapper-section hero hero-ubicacion">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-subtitle">Seguridad Profesional</div>
+
+          <h1 class="hero-title">
+            Visítanos en nuestra oficina
+          </h1>
+
+          <p class="hero-description">
+            Nuestro equipo está listo para asesorarte
+          </p>
+
+          <a href="./contacto.html" class="hero-cta">
+            <span>Solicitar Cotización</span>
+            <svg class="cta-icon" viewBox="0 0 24 24">
+              <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
