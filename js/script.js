@@ -268,28 +268,31 @@ function setupCounterAnimation() {
   const counters = document.querySelectorAll(".counter");
   let animated = false; // evita que se reinicie al volver a hacer scroll
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        counters.forEach(counter => {
-          const target = +counter.getAttribute("data-target");
-          const suffix = counter.getAttribute("data-suffix") || "";
-          const duration = 2000; // tiempo total en ms
-          const stepTime = Math.abs(Math.floor(duration / target));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !animated) {
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            const suffix = counter.getAttribute("data-suffix") || "";
+            const duration = 2000; // tiempo total en ms
+            const stepTime = Math.abs(Math.floor(duration / target));
 
-          let current = 0;
+            let current = 0;
 
-          const timer = setInterval(() => {
-            current++;
-            counter.textContent = `+${current}${suffix}`;
-            (current >= target) && clearInterval(timer);
-          }, stepTime);
-        });
-        
-        animated = true;
-      }
-    });
-  }, { threshold: 0.3 });
+            const timer = setInterval(() => {
+              current++;
+              counter.textContent = `+${current}${suffix}`;
+              current >= target && clearInterval(timer);
+            }, stepTime);
+          });
+
+          animated = true;
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
 
   const milestoneSection = document.getElementById("milestone");
   if (milestoneSection) {
@@ -324,19 +327,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-    // === Footer Animation ===
+  // CLIENTS CAROUSEL
+  const multipleCardCarousel = document.querySelector("#carouselExampleControls");
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    // Inicializar Bootstrap Carousel
+    let carousel = new bootstrap.Carousel(multipleCardCarousel, {
+      interval: false,
+    });
+
+    let carouselInner = multipleCardCarousel.querySelector(".carousel-inner");
+    let carouselItems = multipleCardCarousel.querySelectorAll(".carousel-item");
+    let carouselWidth = carouselInner.scrollWidth;
+    let cardWidth = carouselItems[0].offsetWidth; // ancho de la primera tarjeta
+    let scrollPosition = 0;
+
+    let nextBtn = multipleCardCarousel.querySelector(".carousel-control-next");
+    let prevBtn = multipleCardCarousel.querySelector(".carousel-control-prev");
+
+    nextBtn.addEventListener("click", function () {
+      if (scrollPosition < carouselWidth - cardWidth * 4) {
+        scrollPosition += cardWidth;
+        carouselInner.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+
+    prevBtn.addEventListener("click", function () {
+      if (scrollPosition > 0) {
+        scrollPosition -= cardWidth;
+        carouselInner.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  } else {
+    multipleCardCarousel.classList.add("slide");
+  }
+
+  // === Footer Animation ===
   const footer = document.querySelector("footer");
   if (footer) {
     footer.classList.add("fade-in-up");
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          footer.classList.add("visible");
-          observer.unobserve(footer); // solo una vez
-        }
-      });
-    }, { threshold: 0.2 });
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            footer.classList.add("visible");
+            observer.unobserve(footer); // solo una vez
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
     observer.observe(footer);
   }

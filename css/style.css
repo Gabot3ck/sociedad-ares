@@ -657,6 +657,72 @@ section {
   }
 }
 
+
+/* CLIENTES */
+#clientes {
+  padding: 60px 0;
+  background: var(--bg-color);
+}
+
+#clientes .intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#clientes h3{
+  font-size: 1.4rem;
+}
+#clientes h4 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.carousel-inner {
+  padding: 1em;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: var(--primary-color);
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 33.333333%;
+    display: block;
+  }
+  .carousel-inner {
+    display: flex;
+  }
+}
+.card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card img {
+    max-height: 100%;
+}
+@media (max-width: 767px) {
+  .card .img-wrapper {
+    height: 17em;
+  }
+}
+
+
 /* MILESTONE */
 #milestone {
   background: linear-gradient(rgba(180, 21, 25, 0.85), rgba(180, 21, 25, 0.65)),
@@ -826,7 +892,6 @@ footer .social-icons svg {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .loader {
   min-height: 100vh;
