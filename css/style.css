@@ -296,7 +296,7 @@ section {
   text-align: center;
 }
 /* === HERO === */
-.hero{
+.hero {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -304,7 +304,7 @@ section {
   color: var(--white);
   overflow: hidden;
 }
-.hero-home{
+.hero-home {
   background: linear-gradient(
       135deg,
       rgba(38, 1, 1, 0.812) 0%,
@@ -312,7 +312,7 @@ section {
     ),
     url("../assets/images/backgrounds/seguridad-ares-website.webp");
 }
-.hero-ubicacion{
+.hero-ubicacion {
   background: linear-gradient(
       135deg,
       rgba(0, 0, 0, 0.921) 0%,
@@ -984,3 +984,95 @@ footer .social-icons svg {
   transform: scale(1.1);
 }
 
+/* * * * * LOCATION & CONTACT * * * */
+.container_contact {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs'  preserveAspectRatio='none' viewBox='0 0 1440 760'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1001%26quot%3b)' fill='none'%3e%3crect width='1440' height='760' x='0' y='0' fill='rgba(241%2c 243%2c 241%2c 1)'%3e%3c/rect%3e%3cpath d='M1440 0L1438.7 0L1440 136.51z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1438.7 0L1440 136.51L1440 350.17999999999995L781.0300000000001 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M781.0300000000001 0L1440 350.17999999999995L1440 564.8799999999999L750.2600000000001 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M750.2600000000001 0L1440 564.8799999999999L1440 596.5999999999999L508.2400000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 760L16.51 760L0 435.11z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 435.11L16.51 760L759.63 760L0 235.52z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 235.51999999999998L759.63 760L1159.3600000000001 760L0 179.30999999999997z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 179.30999999999995L1159.3600000000001 760L1347.6200000000001 760L0 80.23999999999995z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1001'%3e%3crect width='1440' height='760' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper_contacto {
+  width: clamp(300px, 90%, 1440px);
+}
+.title_contacto {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.input {
+  border: 2px solid var(--text-dark);
+  background-color: transparent;
+}
+.input:focus,
+.input:visited,
+.input:active {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: transparent;
+  box-shadow: none;
+}
+.errorInput {
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+}
+.errorInput:focus,
+.errorInput:visited,
+.errorInput:active {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: transparent;
+  box-shadow: none;
+}
+.error {
+  color: var(--accent-color);
+  font-size: 0.88rem;
+}
+.bloqueado {
+  cursor: not-allowed !important;
+}
+.contacto_formulario,
+.contacto_ubicacion {
+  width: 90%;
+}
+.contacto_formulario .wrapper_form {
+  width: 100%;
+}
+.wrapper_form input,
+.wrapper_form textarea {
+  font-size: 17px;
+}
+.icon-contacto {
+  color: var(--primary-color);
+}
+.icon-contacto > i {
+  font-size: 22px;
+}
+.icon-contacto + p {
+  font-size: 18px;
+}
+.wrapper_mapa {
+  height: 350px;
+  box-shadow: 8px 8px 16px rgba(165, 177, 198, 0.8),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+.contacto,
+.direccion {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .contacto_formulario .wrapper_form {
+    width: clamp(350px, 70%, 475px);
+  }
+}
+@media (min-width: 992px) {
+  .contacto_formulario,
+  .contacto_ubicacion {
+    width: 50%;
+  }
+  .contacto_formulario .wrapper_form {
+    width: 80%;
+  }
+}
+.scroll-animate {
+  visibility: hidden;
+}
