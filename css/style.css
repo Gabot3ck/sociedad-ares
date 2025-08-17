@@ -657,7 +657,6 @@ section {
   }
 }
 
-
 /* CLIENTES */
 #clientes {
   padding: 60px 0;
@@ -668,7 +667,7 @@ section {
   text-align: center;
   margin-bottom: 40px;
 }
-#clientes h3{
+#clientes h3 {
   font-size: 1.4rem;
 }
 #clientes h4 {
@@ -707,21 +706,20 @@ section {
   }
 }
 .card .img-wrapper {
-    max-width: 100%;
-    height: 13em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  max-width: 100%;
+  height: 13em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card img {
-    max-height: 100%;
+  max-height: 100%;
 }
 @media (max-width: 767px) {
   .card .img-wrapper {
     height: 17em;
   }
 }
-
 
 /* MILESTONE */
 #milestone {
@@ -749,7 +747,7 @@ section {
   font-size: 1.2rem;
 }
 @media (min-width: 992px) {
-  #milestone{
+  #milestone {
     padding: 6rem 0;
   }
 }
@@ -807,44 +805,44 @@ section {
   }
 }
 
-#cursos{
+#cursos {
   margin-top: 80px;
 }
 .os10 {
-    position: relative;
-    background-color: #fff;
-    box-shadow: var(--shadow);
+  position: relative;
+  background-color: #fff;
+  box-shadow: var(--shadow);
 }
 
 .os10 .content {
-    padding: 32px;
+  padding: 32px;
 }
 
 .os10 .img-title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: var(--primary-color);
-    padding: 2px 12px;
-    border-radius: 100px;
-    text-decoration: none;
-    color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: var(--primary-color);
+  padding: 2px 12px;
+  border-radius: 100px;
+  text-decoration: none;
+  color: #fff;
 }
-.os10 img{
-    height: 320px !important ;
-    width: 100%;
-    object-fit: fill;
+.os10 img {
+  height: 320px !important ;
+  width: 100%;
+  object-fit: fill;
 }
 
 .os10 h5 {
-    margin-top: 12px;
-    margin-bottom: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .os10 small {
-    text-transform: uppercase;
-    color: var(--primary-color);
-    text-decoration: underline;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -950,3 +948,29 @@ footer .social-icons svg {
   left: 0;
   right: 0;
 }
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float i {
+  margin-top: 16px;
+}
+
+.whatsapp-float:hover {
+  background-color: #20b858;
+  transform: scale(1.1);
+}
+
