@@ -807,6 +807,46 @@ section {
   }
 }
 
+#cursos{
+  margin-top: 80px;
+}
+.os10 {
+    position: relative;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
+
+.os10 .content {
+    padding: 32px;
+}
+
+.os10 .img-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    padding: 2px 12px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #fff;
+}
+.os10 img{
+    height: 320px !important ;
+    width: 100%;
+    object-fit: fill;
+}
+
+.os10 h5 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.os10 small {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 /* FOOTER */
 footer {
   background-color: var(--text-dark);
