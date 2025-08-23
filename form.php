@@ -3,7 +3,7 @@
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/keys.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../config/keys.php';
 require __DIR__.'/libs/vendor/autoload.php'; // PHPMailer cargado por Composer
 
 use PHPMailer\PHPMailer\PHPMailer;
