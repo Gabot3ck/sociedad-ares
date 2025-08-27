@@ -231,10 +231,8 @@ section {
     left: -20px;
     right: -20px;
     background: var(--white);
-    flex-direction: column;
     padding: 1.2rem;
     margin-top: 1rem;
-    border-radius: 15px;
     box-shadow: 0 10px 30px var(--shadow);
     transform: translateY(-20px);
     opacity: 0;
@@ -298,17 +296,18 @@ section {
 /* === HERO === */
 .hero {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   color: var(--white);
   overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
 }
 .hero-home {
   background: linear-gradient(
       135deg,
-      rgba(38, 1, 1, 0.812) 0%,
-      rgba(9, 8, 8, 0.695) 100%
+      rgba(17, 13, 13, 0.812) 0%,
+      rgba(9, 8, 8, 0.695) 50%
     ),
     url("../assets/images/backgrounds/seguridad-ares-website.webp");
 }
